@@ -55,6 +55,26 @@ remove the blast .gz file
 
 rm ncbi-blast-2.2.30+-ia32-linux.tar.gz 
 
+change directory to your home directory
+
+make a directory to contain your custom blast database
+
+mkdir BLASTDB
+
+change to this directory
+
+download the mibig protein file
+
+wget mibig.secondarymetabolites.org/MIBiG_prot_seqs_1.3.fasta
+
+change the name of the file to mibig.fasta
+
+mv MIBiG_prot_seqs_1.3.fasta mibig.fasta
+
+Make a blastdatabase from the file
+
+makeblastdb -in ~/BLASTDB/mibig.fasta -parse_seqids -dbtype prot
+
 open your .bashrc
 
 nano ~/.bashrc
@@ -72,6 +92,19 @@ So that the complete line looks like this:
 export PATH="/home/student/miniconda2/bin:$PATH:/home/student/ncbi-blast-2.2.30+/bin
 
 Close and save
+
+Open your browser, paste the address below, and download the zipped sequences from our experiment:
+
+http://dna2.macrogen.com/eng/data_access_inv.jsp?invkey=9445F9377F29CA4E831BBF34D5A18261&uI=owenje&oN=170207FN-031&fn=170207FN-031.zip
+
+Change directory to downloads and unzip the sequnce file
+
+
+
+
+
+
+blastx -query Multifasta.fasta -db $BLASTDB/MIBiG_prot_seqs_1.3.fasta -max_target_seqs 1 -outfmt 6 -out blast_output.txt
 
 
 
