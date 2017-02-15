@@ -8,7 +8,9 @@ http://dna2.macrogen.com/eng/data_access_inv.jsp?invkey=9445F9377F29CA4E831BBF34
 
 **Change directory to Downloads and download the 32bit linux binaries for BLAST:**
 
+'''bash
 wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-ia32-linux.tar.gz
+'''
 
 **Download the install file for miniconda:**
 
