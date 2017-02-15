@@ -18,31 +18,60 @@ export PATH=$PATH:$HOME/ncbi-blast-2.6.0+/bin
 
 ncbi-blast-2.2.30+-ia32-linux.tar.gz
 
-Change directory to Downloads and download the 32bit linux binaries for BLAST
+Change directory to Downloads and download the 32bit linux binaries for BLAST:
 
-$wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-ia32-linux.tar.gz
 
-Download the install file for miniconda
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-ia32-linux.tar.gz
+
+Download the install file for miniconda:
 
 wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86.sh
 
-Change the file permissions to make it executable
+Change the file permissions to make it executable:
 
 chmod 777 Miniconda2-latest-Linux-x86.sh
 
-run the install script
+run the install script"
+
 ./Miniconda2-latest-Linux-x86.sh
 
-reload settings from your .bashrc
+reload settings from your .bashrc:
 
 source ~/.bashrc
-type "conda" to confirm that minconda has installed corrctly
 
-Make a new python 2.7 environment called bio that has biopython and spyder installed
+type "conda" to confirm that minconda has installed correctly
+
+Make a new python 2.7 environment called bio that has biopython and spyder installed:
 
 conda create --prefix bio python=2.7 biopython spyder
 
+Unzip the blast package and move the resulting directory to your home directory
 
-.
+gunzip -d ncbi-blast-2.2.30+-ia32-linux.tar.gz 
+tar xvpf ncbi-blast-2.2.30+-ia32-linux.tar
+mv ncbi-blast-2.2.30+ ~
+
+remove the blast .gz file
+
+rm ncbi-blast-2.2.30+-ia32-linux.tar.gz 
+
+open your .bashrc
+
+nano ~/.bashrc
+
+Your path should be set in a statement that looks like this:
+
+export PATH="/home/student/miniconda2/bin:$PATH
+
+Add this to the end:
+
+:/home/student/ncbi-blast-2.2.30+/bin
+
+So that the complete line looks like this:
+
+export PATH="/home/student/miniconda2/bin:$PATH:/home/student/ncbi-blast-2.2.30+/bin
+
+Close and save
+
 
 
