@@ -97,9 +97,17 @@ Open your browser, paste the address below, and download the zipped sequences fr
 
 http://dna2.macrogen.com/eng/data_access_inv.jsp?invkey=9445F9377F29CA4E831BBF34D5A18261&uI=owenje&oN=170207FN-031&fn=170207FN-031.zip
 
-Change directory to downloads and unzip the sequnce file
+Change directory to downloads and unzip the sequnce file into a folder called seqdata
 
+unzip 170207FN-031.zip -d seqdata
 
+activate your virtual python environment
+
+source activate bio
+
+open the python ide you included in your environment
+
+spyder
 
 
 
