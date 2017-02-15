@@ -13,21 +13,22 @@ wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.3
 ```
 
 **Download the install file for miniconda:**
-
+```bash
 wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86.sh
-
+```
 **Change the file permissions to make it executable:**
-
+```bash
 chmod 777 Miniconda2-latest-Linux-x86.sh
-
+```
 **run the install script**
-
+```bash
 ./Miniconda2-latest-Linux-x86.sh
-
+```
 **reload settings from your .bashrc:**
 
+```
 source ~/.bashrc
-
+```
 **type "conda" to confirm that minconda has installed correctly**
 
 **Make a new python 2.7 environment called bio that has biopython and spyder installed:**
