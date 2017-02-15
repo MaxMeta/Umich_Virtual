@@ -32,53 +32,53 @@ source ~/.bashrc
 **type "conda" to confirm that minconda has installed correctly**
 
 **Make a new python 2.7 environment called bio that has biopython and spyder installed:**
-
+```
 conda create --prefix bio python=2.7 biopython spyder
-
+```
 **Unzip the blast package and move the resulting directory to your home directory**
-
+```
 gunzip -d ncbi-blast-2.2.30+-ia32-linux.tar.gz 
 tar xvpf ncbi-blast-2.2.30+-ia32-linux.tar
 mv ncbi-blast-2.2.30+ ~
-
+```
 **remove the blast .gz file**
-
+```
 rm ncbi-blast-2.2.30+-ia32-linux.tar.gz 
-
+```
 **change directory to your home directory**
 
 **make a directory to contain your custom blast database**
-
+```
 mkdir BLASTDB
-
+```
 **change to the BLASTDB directory download the mibig protein file**
-
+```
 wget mibig.secondarymetabolites.org/MIBiG_prot_seqs_1.3.fasta
-
+```
 **change the name of the file to mibig.fasta**
-
+```
 mv MIBiG_prot_seqs_1.3.fasta mibig.fasta
-
+```
 **Make a blast database from the file**
-
+```
 makeblastdb -in ~/BLASTDB/mibig.fasta -parse_seqids -dbtype prot
-
+```
 **open your .bashrc**
-
+```
 nano ~/.bashrc
-
+```
 **Your path should be set in a statement that looks like this:**
-
+```
 export PATH="/home/student/miniconda2/bin:$PATH
-
+```
 **Add this to the end:**
-
+```
 :/home/student/ncbi-blast-2.2.30+/bin
-
+```
 **So that the complete line looks like this:**
-
+```
 export PATH="/home/student/miniconda2/bin:$PATH:/home/student/ncbi-blast-2.2.30+/bin
-
+```
 **Close and save**
 
 **Open your browser, paste the address below, and download the zipped sequences from our experiment:**
@@ -86,17 +86,17 @@ export PATH="/home/student/miniconda2/bin:$PATH:/home/student/ncbi-blast-2.2.30+
 http://dna2.macrogen.com/eng/data_access_inv.jsp?invkey=9445F9377F29CA4E831BBF34D5A18261&uI=owenje&oN=170207FN-031&fn=170207FN-031.zip
 
 **Change directory to downloads and unzip the sequnce file into a folder called seqdata**
-
+```
 unzip 170207FN-031.zip -d seqdata
-
+```
 **activate your virtual python environment**
-
+```
 source activate bio
-
+```
 **open the python ide you included in your environment**
-
+```
 spyder
-
+```
 **cut and paste the entire trimmer.py file from this repository into the temprary script file that has been created**
 
 **Select the whole lot and run it in the currently open python console**
@@ -106,6 +106,6 @@ spyder
 **use nano to have a look at it**
 
 **Blast all of the trimmed sequences in Multifasta.fasta against your mibig database:**
-
+```
 blastx -query ~/Downloads/seqdata/Multifasta.fasta -db ~/BLASTDB/mibig.fasta -max_target_seqs 1 -outfmt 6 -out ~/blast_output.txt
-
+```
