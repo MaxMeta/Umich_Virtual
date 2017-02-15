@@ -109,10 +109,15 @@ open the python ide you included in your environment
 
 spyder
 
+cut and paste the entire trimmer.py file from this repository into the temprary script file that has been created
 
+Select the whole lot and run it in the currently open python console
 
+Open a terminal and change directory to Downloads/seqdata, then verify that there is now a file called Multifasta.fasta in there
 
-blastx -query Multifasta.fasta -db $BLASTDB/MIBiG_prot_seqs_1.3.fasta -max_target_seqs 1 -outfmt 6 -out blast_output.txt
+use nano to have a look at it
 
+Blast all of the trimmed sequences in Multifasta.fasta against your mibig database:
 
+blastx -query ~/Downloads/seqdata/Multifasta.fasta -db ~/BLASTDB/mibig.fasta -max_target_seqs 1 -outfmt 6 -out ~/blast_output.txt
 
