@@ -15,5 +15,4 @@ mv ncbi-blast-2.6.0+ ~
 Open your .bashrc and then append the blast folder to your search path:
 
 export PATH=$PATH:$HOME/ncbi-blast-2.6.0+/bin
-export 
 
