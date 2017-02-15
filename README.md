@@ -16,3 +16,33 @@ Open your .bashrc and then append the blast folder to your search path:
 
 export PATH=$PATH:$HOME/ncbi-blast-2.6.0+/bin
 
+ncbi-blast-2.2.30+-ia32-linux.tar.gz
+
+Change directory to Downloads and download the 32bit linux binaries for BLAST
+
+$ wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-ia32-linux.tar.gz
+
+Download the install file for miniconda
+
+wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86.sh
+
+Change the file permissions to make it executable
+
+chmod 777 Miniconda2-latest-Linux-x86.sh
+
+run the install script
+./Miniconda2-latest-Linux-x86.sh
+
+reload settings from your .bashrc
+
+source ~/.bashrc
+type "conda" to confirm that minconda has installed corrctly
+
+Make a new python 2.7 environment called bio that has biopython and spyder installed
+
+conda create --prefix bio python=2.7 biopython spyder
+
+
+.
+
+
