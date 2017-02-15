@@ -1,22 +1,18 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 10 15:49:17 2015
-
 @author: SpiffKringle
 """
 import os
 from Bio import SeqIO, Alphabet
 
-
-targetDir = '/Users/owenje/Desktop/AllToTrim'
+targetDir = '/home/student/Downloads/seqdata'
 extensions = set(['.ab1'])
-#can't handle Ns, is the alphabet set wrong?
 
-generator =  os.walk(targetDir)#this will recursively yeild a tuple of (currentDir, subdirs in currentDir, files in CurrentDir)
-items = generator.next()#look one level down only
-fileList = items[2]#the file list is third in the tuple
+generator =  os.walk(targetDir)
+items = generator.next()
+fileList = items[2]
 dirName = items[0]
-#os.mkdir(dirName + '/newdir')
 records = []
 for fname in fileList:
     print fname
@@ -33,9 +29,8 @@ for fname in fileList:
 
 for record in records:
     print record.id, len(record)
-#outHandle = os.path.join()        
+      
 with open(targetDir + '/Multifasta.fasta','w') as f:
     for record in records:
         f.write('> ' + str(record.id) +'\n')
         f.write(str(record.seq) + '\n')
-        
